@@ -1,0 +1,125 @@
+<template>
+     <lightning-card title="Lightning Record Edit Form">
+          <lightning-record-edit-form
+               object-api-name="Contact"
+               onerror={handleError}
+               onsuccess={handleSuccess}
+          >
+               <lightning-layout multiple-rows>
+                    <lightning-layout-item
+                         size="12"
+                         small-device-size="12"
+                         medium-device-size="6"
+                         large-device-size="6"
+                         padding="horizontal-small"
+                    >
+                         <div class="custom-box">
+                              <lightning-input-field field-name="Name" class="field-value">
+                              </lightning-input-field>
+                         </div>
+                    </lightning-layout-item>
+                    <lightning-layout-item
+                         size="12"
+                         small-device-size="12"
+                         medium-device-size="6"
+                         large-device-size="6"
+                         padding="horizontal-small"
+                    >
+                         <div class="custom-box">
+                              <lightning-input-field field-name="AccountId" class="field-value">
+                              </lightning-input-field>
+                         </div>
+                    </lightning-layout-item>
+               </lightning-layout>
+
+               <lightning-layout multiple-rows>
+                    <lightning-layout-item
+                         size="12"
+                         small-device-size="12"
+                         medium-device-size="6"
+                         large-device-size="6"
+                         padding="horizontal-small"
+                    >
+                         <div class="custom-box">
+                              <lightning-input-field field-name="Birthdate" class="field-value">
+                              </lightning-input-field>
+                         </div>
+                    </lightning-layout-item>
+                    <lightning-layout-item
+                         size="12"
+                         small-device-size="12"
+                         medium-device-size="6"
+                         large-device-size="6"
+                         padding="horizontal-small"
+                    >
+                         <div class="custom-box">
+                              <lightning-input-field field-name="Department" class="field-value">
+                              </lightning-input-field>
+                         </div>
+                    </lightning-layout-item>
+               </lightning-layout>
+
+               <lightning-layout multiple-rows>
+                    <lightning-layout-item
+                         size="12"
+                         small-device-size="12"
+                         medium-device-size="6"
+                         large-device-size="6"
+                         padding="horizontal-small"
+                    >
+                         <div class="custom-box">
+                              <lightning-input-field field-name="Phone" class="field-value">
+                              </lightning-input-field>
+                         </div>
+                    </lightning-layout-item>
+                    <lightning-layout-item
+                         size="12"
+                         small-device-size="12"
+                         medium-device-size="6"
+                         large-device-size="6"
+                         padding="horizontal-small"
+                    >
+                         <div class="custom-box">
+                              <lightning-input-field field-name="AssistantName" class="field-value">
+                              </lightning-input-field>
+                         </div>
+                    </lightning-layout-item>
+               </lightning-layout>
+
+               <div class="button-container">
+                    <lightning-button
+                         class="slds-m-top_small"
+                         variant="brand"
+                         type="cancel"
+                         name="Cancel"
+                         label="Cancel"
+                         lwc:ref="cancel"
+                    >
+                    </lightning-button>
+                    <lightning-button
+                         class="slds-m-top_small"
+                         variant="brand"
+                         type="submit"
+                         name="Create"
+                         onclick={handleClick}
+                         label="Create"
+                    >
+                    </lightning-button>
+               </div>
+          </lightning-record-edit-form>
+     </lightning-card>
+     <template if:true={isSpinner}>
+          <div class="slds-is-relative">
+               <section class="slds-modal slds-fade-in-open">
+                    <lightning-spinner
+                         alternative-text="loading..."
+                         variant="brand"
+                    ></lightning-spinner>
+               </section>
+               <div
+                    class="slds-backdrop slds-backdrop_open"
+                    style="width: 60%; height: 50%; margin: auto"
+               ></div>
+          </div>
+     </template>
+</template>
